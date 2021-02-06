@@ -11,8 +11,13 @@ app = Flask(__name__)
 def packageResponse(isValid, dateEntered, startStation, endStation):
     if (isValid==True):
         logs = getFinalPath(dateEntered, startStation, endStation)
+        #When the 2 stations cannot be reached (no path found)
+        if len(logs)<= 1:
+            response = json.dumps("The two stations cannot be reached")
+        else:
+            response = json.dumps(logs)
         response = app.response_class(
-        response=json.dumps(logs),
+        response=response,
         status=200,
         mimetype='application/json')
         return response

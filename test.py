@@ -39,7 +39,14 @@ def test_userInput_invalidDate():
     response_body = resp.json()
     assert response_body == "Invalid Date"
 
-#Test 4) Tests for valid user input
+#Test 4) Tests for valid user input but no path found
+def test_userInput_validInputWithTimeAndNoPath():
+    url = 'http://127.0.0.1:5000/path?date=1990-01-31T04:00&start=Admiralty&end=Bartley'
+    resp = requests.get(url)
+    response_body = resp.json()
+    assert response_body == "The two stations cannot be reached"
+
+#Test 5) Tests for valid user input and path found
 def test_userInput_validInputWithoutTime():
     url = 'http://127.0.0.1:5000/path?start=Holland+Village&end=Bugis'
     resp = requests.get(url)
