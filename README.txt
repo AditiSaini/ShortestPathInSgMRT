@@ -18,7 +18,11 @@
 6) Deactivating the virtual environment 
 	deactivate
 
-----B) Assumptions----
+----B) Running tests----
+1) Go to the root directory of the folder and run 
+	pytest test.py
+
+----C) Assumptions----
 1) The user is expected to enter the start and end stations as query parameters (GET Request)
 	e.g. http://127.0.0.1:5000/path?start=Bugis&end=Yew+Tee
 2) The station names with spaces in between are expected to be seperated by a '+' sign (as shown above)
