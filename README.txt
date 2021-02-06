@@ -14,7 +14,7 @@
 	pip install -r requirements.txt
 5) Run the server
 	MACOS: python -m flask run
-    WINDOWS: python app.py
+	WINDOWS: python app.py
 6) Deactivating the virtual environment 
 	deactivate
 
