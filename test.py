@@ -103,7 +103,6 @@ def test_userInput_validInputDayHour():
     url = 'http://127.0.0.1:5000/path?date=2019-01-31T13:00&start=Holland+Village&end=Bugis'
     resp = requests.get(url)
     response_body = resp.json()
-    #DT line stops working at night, hence the change in route
     assert response_body == [
     "Take CC line from Holland Village to Farrer Road",
     "Take CC line from Farrer Road to Botanic Gardens",
